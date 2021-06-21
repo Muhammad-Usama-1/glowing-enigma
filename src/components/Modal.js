@@ -2,31 +2,53 @@ import React, { useState } from "react";
 import "./Modal.css";
 import { useStateValue } from "../StateProvider";
 
-const Modal = ({ closeModal }) => {
+const Modal = ({ closeModal, operation, oldname, contact }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [pkg, setPkg] = useState("");
   const [{ contacts }, dispatch] = useStateValue();
-  const addToContact = () => {
-    if (!name || !phone || !pkg) {
-      alert("Checked All feild correctly");
-      return;
+  const doOperation = () => {
+    if (operation === "Add new") {
+      if (!name || !phone || !pkg) {
+        alert("Checked All feild correctly");
+        return;
+      }
+      closeModal(false);
+      console.log("Contact Added");
+      const newData = {
+        name: name,
+        phone: phone,
+        pkg: pkg,
+        id: new Date().getTime(),
+      };
+      contacts.unshift(newData);
+
+      dispatch({
+        type: "ADD_CONTACT",
+        payload: contacts,
+      });
     }
-    closeModal(false);
-    console.log("Contact Added");
-    const newData = {
-      name: name,
-      phone: phone,
-      pkg: pkg,
-    };
-    contacts.unshift(newData);
-
-    dispatch({
-      type: "ADD_CONTACT",
-      payload: contacts,
-    });
+    if (operation === "Update") {
+      if (!name || !phone || !pkg) {
+        alert("Checked All feild correctly");
+        return;
+      }
+      const index = contacts.findIndex((c) => c.name === oldname);
+      contacts.splice(index, 1);
+      const newData = {
+        name: name ? name : contact.name,
+        phone: phone ? phone : contact.phone,
+        pkg: pkg ? pkg : contact.pkg,
+        id: contact.id,
+      };
+      contacts.unshift(newData);
+      closeModal(false);
+      dispatch({
+        type: "ADD_CONTACT",
+        payload: contacts,
+      });
+    }
   };
-
   return (
     <div className="modalBackground">
       <div className="modalContainer">
@@ -40,7 +62,7 @@ const Modal = ({ closeModal }) => {
           </button>
         </div>
         <div className="title">
-          <h1>Add new contact in your contact Management system</h1>
+          <h1>{operation} contact in your contact Management system</h1>
         </div>
         <div className="body">
           <div className="input-box">
@@ -48,6 +70,7 @@ const Modal = ({ closeModal }) => {
             <input
               type="text"
               id="name"
+              placeholder={oldname}
               onChange={(e) => {
                 setName(e.target.value);
               }}
@@ -83,7 +106,9 @@ const Modal = ({ closeModal }) => {
           >
             Cancel
           </button>
-          <button onClick={addToContact}>Continue</button>
+          <button onClick={() => doOperation()}>
+            {operation ? operation : ""}
+          </button>
         </div>
       </div>
     </div>

@@ -7,11 +7,15 @@ import { useStateValue } from "../StateProvider";
 import Detail from "./Detail";
 
 const ContactList = () => {
-  const [data] = useStateValue();
-  const { contacts } = data;
-  console.log(contacts);
-
+  const [{ contacts }, dispatch] = useStateValue();
+  // const { contacts } = data;
   const [searchTerm, setSearchTerm] = useState("");
+  const refreshContacts = () => {
+    console.log("List will refresh");
+    dispatch({
+      type: "REFRESH",
+    });
+  };
 
   return (
     <>
@@ -52,6 +56,11 @@ const ContactList = () => {
                 </>
               );
             })}
+        </div>
+        <div className="refresh-btn-box">
+          <button onClick={refreshContacts} className="refresh-btn">
+            Refresh List
+          </button>
         </div>
       </div>
     </>

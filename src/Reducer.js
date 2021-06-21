@@ -5,6 +5,11 @@ export const initialState = {
 export const reducer = (state, action) => {
   console.log(action);
   switch (action.type) {
+    case "REFRESH":
+      return {
+        ...state,
+        contacts: initialState.contacts,
+      };
     case "ADD_CONTACT":
       return {
         ...state,
@@ -14,6 +19,11 @@ export const reducer = (state, action) => {
       return {
         ...state,
         contacts: [...action.payload],
+      };
+
+    case "UPDATE_CONTACT":
+      return {
+        ...state,
       };
 
     default:

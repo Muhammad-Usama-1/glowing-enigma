@@ -50,24 +50,40 @@
   outline: none;
 }
 .contact-detail {
+  background-color: rgb(0, 255, 106);
+  font-size: 2rem;
   margin: 0 auto;
-  margin-left: 2rem;
+  margin-left: 5rem;
   width: 50%;
   padding: 0.5rem 4rem;
   display: flex;
   flex-direction: column;
-  font-size: 1.7rem;
-  background-color: #eee;
   font-weight: 500;
 }
 .btn-box {
-  margin-left: 2rem;
+  margin: 2px auto;
+
   display: flex;
   align-items: center;
+  width: 90%;
+  border-bottom: 0.1rem solid gray;
 }
+
 .hidden {
   display: none;
   opacity: 0;
+}
+.refresh-btn-box {
+  margin: 1rem auto;
+  width: 80%;
+}
+.refresh-btn {
+  width: 50%;
+  background-color: rgb(0, 255, 106);
+  padding: 1rem 1rem;
+  font-size: 2rem;
+  color: #fff;
+  color: #000;
 }
 
 @media (max-width: 600px) {
@@ -111,6 +127,10 @@
   font-size: 2rem;
 }
 .dlt-icon {
+  color: red;
   margin-left: auto;
   margin-right: 4rem;
+}
+.edit-icon {
+  margin-left: 4rem;
 }
