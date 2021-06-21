@@ -1,0 +1,120 @@
+* {
+  font-size: 62.5%;
+}
+.contact-card {
+  margin: 0 auto;
+  width: 80%;
+  background-color: #fff;
+  box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 40vh;
+}
+
+.title {
+  margin: 1rem auto;
+  color: #eee;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: lighter;
+  width: 50%;
+  border-bottom: 3px solid rgb(128, 128, 128);
+}
+.search-box {
+  background-color: #fff;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  height: 4rem;
+  border-radius: 2rem;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+
+.input-box {
+  margin-right: auto;
+  width: 90%;
+  /* margin-right: 2rem; */
+
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.search-icon {
+  margin-left: 2rem;
+  height: 4rem;
+}
+.contact-info {
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+.contact-detail {
+  margin: 0 auto;
+  margin-left: 2rem;
+  width: 50%;
+  padding: 0.5rem 4rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.7rem;
+  background-color: #eee;
+  font-weight: 500;
+}
+.btn-box {
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+.hidden {
+  display: none;
+  opacity: 0;
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+  .info {
+    margin: 0 auto;
+  }
+
+  .contact-card {
+    margin: 0 auto;
+    margin-top: 3rem;
+  }
+  .title {
+    margin-top: 5rem;
+    font-size: 2rem;
+  }
+  .search-box {
+    width: 90%;
+  }
+  .input-box {
+    margin-right: auto;
+  }
+  .title {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .add-contact {
+    margin: 0 auto;
+    width: 50%;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 30%;
+  }
+}
+.add-contact {
+  font-size: 2rem;
+}
+.dlt-icon {
+  margin-left: auto;
+  margin-right: 4rem;
+}
