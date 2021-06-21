@@ -6,14 +6,16 @@
   height: 100vh;
   background-color: rgba(200, 200, 200);
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .modalContainer {
-  width: 500px;
-  height: 500px;
   border-radius: 12px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -51,9 +53,9 @@
   text-align: center;
 }
 .input-box {
+  color: black;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
   width: 50%;
   font-size: 2rem;
 }
@@ -88,4 +90,23 @@
   html {
     font-size: 40%;
   }
+}
+
+/* CSS for header -- (detail of contacts) */
+.header {
+  padding: 1rem 2rem;
+  margin: 1rem auto;
+  width: 80%;
+  color: #fff;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 0.2rem solid gray;
+}
+.add-btn {
+  border: none;
+  padding: 0.4rem 0.6rem;
+  background-color: green;
+  color: #fff;
+  font-size: 2rem;
 }

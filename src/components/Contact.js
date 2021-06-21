@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import "./ContactList.css";
 import { useStateValue } from "../StateProvider";
-
 import PermPhoneMsgIcon from "@material-ui/icons/PermPhoneMsg";
 import PersonIcon from "@material-ui/icons/Person";
 import DeleteIcon from "@material-ui/icons/Delete";
@@ -13,8 +12,14 @@ const Contact = ({ contact }) => {
     console.log(el.current);
     el.current.classList.toggle("hidden");
   };
-  const deleteContact = () => {
+  const deleteContact = (id) => {
+    const newContacts = contacts.filter((contact) => contact.id !== id);
+    console.log(newContacts);
     console.log("Contact deleted");
+    dispatch({
+      type: "DELETE_CONTACT",
+      payload: newContacts,
+    });
   };
 
   return (
@@ -25,7 +30,10 @@ const Contact = ({ contact }) => {
           {contact.name}
         </button>
         <PermPhoneMsgIcon />
-        <DeleteIcon className="dlt-icon" onClick={deleteContact} />
+        <DeleteIcon
+          className="dlt-icon"
+          onClick={() => deleteContact(contact.id)}
+        />
       </div>
 
       <div ref={el} className="hidden contact-detail">

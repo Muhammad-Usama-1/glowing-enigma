@@ -8,12 +8,12 @@ export const reducer = (state, action) => {
     case "ADD_CONTACT":
       return {
         ...state,
-        contacts: [...contacts, action.payload],
+        contacts: action.payload,
       };
-  case "DELETE_CONTACT":
+    case "DELETE_CONTACT":
       return {
         ...state,
-        contacts: [...contacts, action.payload],
+        contacts: [...action.payload],
       };
 
     default:

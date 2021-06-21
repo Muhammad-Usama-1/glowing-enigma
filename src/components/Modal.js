@@ -6,8 +6,12 @@ const Modal = ({ closeModal }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [pkg, setPkg] = useState("");
-  const [, dispatch] = useStateValue();
+  const [{ contacts }, dispatch] = useStateValue();
   const addToContact = () => {
+    if (!name || !phone || !pkg) {
+      alert("Checked All feild correctly");
+      return;
+    }
     closeModal(false);
     console.log("Contact Added");
     const newData = {
@@ -15,10 +19,11 @@ const Modal = ({ closeModal }) => {
       phone: phone,
       pkg: pkg,
     };
+    contacts.unshift(newData);
 
     dispatch({
       type: "ADD_CONTACT",
-      payload: newData,
+      payload: contacts,
     });
   };
 

@@ -4,18 +4,19 @@ import Contact from "./Contact.js";
 import SearchIcon from "@material-ui/icons/Search";
 import Modal from "./Modal";
 import { useStateValue } from "../StateProvider";
+import Detail from "./Detail";
 
 const ContactList = () => {
-  const [openModal, setOpenModal] = useState(false);
-
   const [data] = useStateValue();
   const { contacts } = data;
+  console.log(contacts);
 
   const [searchTerm, setSearchTerm] = useState("");
+
   return (
     <>
       <h1 className="title">Contact Management System</h1>
-      {openModal && <Modal closeModal={setOpenModal} />}
+
       <div className="search-box">
         <SearchIcon className="search-icon" />
         <input
@@ -27,11 +28,9 @@ const ContactList = () => {
           }}
         />
       </div>
+      <Detail />
       <div className="container">
         <div className="contact-card">
-          <button className="add-contact" onClick={() => setOpenModal(true)}>
-            Add New Contact
-          </button>
           {contacts
             .filter((val) => {
               if (searchTerm === "") {
