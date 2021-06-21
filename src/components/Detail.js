@@ -5,10 +5,8 @@ import { useStateValue } from "../StateProvider";
 import AddIcon from "@material-ui/icons/Add";
 
 const Detail = () => {
-  let c = new Date().getTime();
-  console.log(c);
   const [openModal, setOpenModal] = useState(false);
-  const [{ contacts }, dispatch] = useStateValue();
+  const [{ contacts }] = useStateValue();
 
   return (
     <div className="header">

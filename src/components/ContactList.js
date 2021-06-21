@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import "./ContactList.css";
 import Contact from "./Contact.js";
 import SearchIcon from "@material-ui/icons/Search";
-import Modal from "./Modal";
 import { useStateValue } from "../StateProvider";
 import Detail from "./Detail";
 
 const ContactList = () => {
   const [{ contacts }, dispatch] = useStateValue();
-  // const { contacts } = data;
+
   const [searchTerm, setSearchTerm] = useState("");
   const refreshContacts = () => {
     console.log("List will refresh");

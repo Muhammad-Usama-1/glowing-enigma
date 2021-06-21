@@ -90,6 +90,33 @@
   html {
     font-size: 40%;
   }
+  .modalContainer .footer button {
+    border: none;
+    height: max-content;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+}
+@media (max-width: 600px) {
+  .modalContainer {
+    width: 70%;
+  }
+
+  .input-box {
+    flex-direction: column;
+  }
+}
+@media (max-width: 400px) {
+  .modalContainer {
+    width: 80%;
+  }
+  .modalContainer .footer {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /* CSS for header -- (detail of contacts) */
