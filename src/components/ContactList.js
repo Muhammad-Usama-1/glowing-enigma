@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./ContactList.css";
 import Contact from "./Contact.js";
 import SearchIcon from "@material-ui/icons/Search";
@@ -7,6 +7,7 @@ import Detail from "./Detail";
 
 const ContactList = () => {
   const [{ contacts }, dispatch] = useStateValue();
+  const btn = useRef("");
 
   const [searchTerm, setSearchTerm] = useState("");
   const refreshContacts = () => {
@@ -67,7 +68,7 @@ const ContactList = () => {
           <button onClick={refreshContacts} className="refresh-btn">
             Refresh List
           </button>
-          <button onClick={deleteAllCOntacts} className="dlt_all-btn">
+          <button onClick={deleteAllCOntacts} ref={btn} className="dlt_all-btn">
             Delete All
           </button>
         </div>

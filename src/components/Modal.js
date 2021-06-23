@@ -3,9 +3,9 @@ import "./Modal.css";
 import { useStateValue } from "../StateProvider";
 
 const Modal = ({ closeModal, operation, oldname, contact }) => {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [pkg, setPkg] = useState("");
+  const [name, setName] = useState(contact ? contact.name : "");
+  const [phone, setPhone] = useState(contact ? contact.phone : "");
+  const [pkg, setPkg] = useState(contact ? contact.pkg : "");
   const [{ contacts }, dispatch] = useStateValue();
   const doOperation = () => {
     if (operation === "Add new") {
@@ -70,6 +70,7 @@ const Modal = ({ closeModal, operation, oldname, contact }) => {
             <input
               type="text"
               id="name"
+              value={name}
               placeholder={oldname}
               onChange={(e) => {
                 setName(e.target.value);
@@ -79,6 +80,7 @@ const Modal = ({ closeModal, operation, oldname, contact }) => {
           <div className="input-box">
             <label htmlFor="phonenumber">Phone Number : </label>
             <input
+              value={phone}
               type="text"
               id="phonenumber"
               onChange={(e) => {
@@ -91,6 +93,7 @@ const Modal = ({ closeModal, operation, oldname, contact }) => {
             <input
               type="text"
               id="pkg"
+              value={pkg}
               onChange={(e) => {
                 setPkg(e.target.value);
               }}
