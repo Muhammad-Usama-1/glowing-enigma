@@ -87,16 +87,19 @@
 }
 
 @media (max-width: 600px) {
+  #cancelBtn {
+    background-color: crimson;
+    padding: 0.4rem 0rem 0.1rem 0rem;
+  }
   html {
     font-size: 40%;
   }
   .modalContainer .footer button {
-    border: none;
-    height: max-content;
-    background-color: cornflowerblue;
-    color: white;
-    border-radius: 0.5rem;
-    font-size: 1.6rem;
+    padding: 0.4rem 0rem 0.1rem 0rem;
+    width: 150px;
+    height: 3rem;
+    border-radius: 1px;
+    font-size: 1rem;
     cursor: pointer;
   }
 }
@@ -110,6 +113,11 @@
   }
 }
 @media (max-width: 400px) {
+  .modalContainer .footer button {
+    width: 50%;
+    height: max-content;
+    font-size: 1rem;
+  }
   .modalContainer {
     width: 80%;
   }
