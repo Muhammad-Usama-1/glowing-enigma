@@ -25,6 +25,11 @@ export const reducer = (state, action) => {
       return {
         ...state,
       };
+    case "DELETE_ALL":
+      return {
+        ...state,
+        contacts: [],
+      };
 
     default:
       return {

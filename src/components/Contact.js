@@ -46,7 +46,7 @@ const Contact = ({ contact }) => {
         <button className="contact-info" onClick={changeClass}>
           {contact.name}
         </button>
-        <PermPhoneMsgIcon />
+        <PermPhoneMsgIcon className="call-icon" />
         <EditIcon className="edit-icon" onClick={editContact} />
         <DeleteIcon
           className="dlt-icon"

@@ -42,13 +42,33 @@
   margin-left: 2rem;
   height: 4rem;
 }
+.btn-box {
+  margin: 2px auto;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  border-bottom: 0.1rem solid gray;
+}
 .contact-info {
+  min-width: 55%;
   font-size: 2rem;
   padding: 1rem 2rem;
   background-color: transparent;
   border: none;
   outline: none;
 }
+.call-icon {
+  min-width: 15%;
+}
+.dlt-icon {
+  min-width: 15%;
+  color: red;
+}
+.edit-icon {
+  color: royalblue;
+  min-width: 15%;
+}
+
 .contact-detail {
   background-color: rgb(0, 255, 106);
   font-size: 2rem;
@@ -60,30 +80,31 @@
   flex-direction: column;
   font-weight: 500;
 }
-.btn-box {
-  margin: 2px auto;
-
-  display: flex;
-  align-items: center;
-  width: 90%;
-  border-bottom: 0.1rem solid gray;
-}
 
 .hidden {
   display: none;
   opacity: 0;
 }
-.refresh-btn-box {
+.CTA-btn-box {
   margin: 1rem auto;
   width: 80%;
+  background-color: red;
+  display: flex;
 }
 .refresh-btn {
+  flex: 1;
   width: 50%;
   background-color: rgb(0, 255, 106);
   padding: 1rem 1rem;
   font-size: 2rem;
-  color: #fff;
   color: #000;
+}
+.dlt_all-btn {
+  flex: 1;
+  color: #fff;
+  background-color: rgb(250, 58, 58);
+  font-size: 2rem;
+  padding: 0.5rem 1.5rem;
 }
 
 @media (max-width: 600px) {
@@ -125,12 +146,4 @@
 }
 .add-contact {
   font-size: 2rem;
-}
-.dlt-icon {
-  color: red;
-  margin-left: auto;
-  margin-right: 4rem;
-}
-.edit-icon {
-  margin-left: 4rem;
 }

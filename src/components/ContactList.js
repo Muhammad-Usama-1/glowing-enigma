@@ -16,6 +16,13 @@ const ContactList = () => {
     });
   };
 
+  const deleteAllCOntacts = () => {
+    console.log("Delete all contacts will be occur");
+    dispatch({
+      type: "DELETE_ALL",
+    });
+  };
+
   return (
     <>
       <h1 className="title">Contact Management System</h1>
@@ -56,9 +63,12 @@ const ContactList = () => {
               );
             })}
         </div>
-        <div className="refresh-btn-box">
+        <div className="CTA-btn-box">
           <button onClick={refreshContacts} className="refresh-btn">
             Refresh List
+          </button>
+          <button onClick={deleteAllCOntacts} className="dlt_all-btn">
+            Delete All
           </button>
         </div>
       </div>
