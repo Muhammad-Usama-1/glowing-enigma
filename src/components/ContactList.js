@@ -31,7 +31,7 @@ const ContactList = () => {
       <div className="search-box">
         <SearchIcon className="search-icon" />
         <input
-          placeholder="Search In Contacts"
+          placeholder="Search by name or Number"
           type="text"
           className="input-box"
           onChange={(e) => {
@@ -47,7 +47,8 @@ const ContactList = () => {
               if (searchTerm === "") {
                 return val;
               } else if (
-                val.name.toLowerCase().includes(searchTerm.toLowerCase())
+                val.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                val.phone.includes(searchTerm)
               ) {
                 return val;
               }
